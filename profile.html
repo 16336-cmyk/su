@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติส่วนตัว | แฟ้มสะสมผลงาน</title>
+    <style>
+        /* สไตล์พื้นฐาน */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* แถบเมนูด้านบน */
+        header {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+        /* ส่วนเนื้อหาประวัติส่วนตัว */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        /* วงกลมสำหรับใส่รูปภาพ */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #1abc9c;
+            background-color: #ddd; /* สีพื้นหลังชั่วคราวถ้ารูปยังไม่โหลด */
+        }
+        .profile-header h1 {
+            margin: 15px 0 5px 0;
+            color: #2c3e50;
+        }
+        .profile-header p {
+            color: #7f8c8d;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* ส่วนรายละเอียดข้อมูล */
+        .profile-details {
+            margin-top: 20px;
+        }
+        .profile-details h2 {
+            color: #1abc9c;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            row-gap: 12px;
+            margin-top: 15px;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        /* ส่วนท้ายเว็บ */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html">ประวัติการศึกษา</a></li>
+                <li><a href="award.html">ผลงาน</a></li>
+                <li><a href="contact.html">ช่องทางการติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <section class="profile-header">
+            <img src="your-image.jpg" alt="รูปโปรไฟล์ของฉัน" class="profile-img">
+            <h1>ชื่อ-นามสกุล ของคุณ</h1>
+            <p>ตำแหน่ง/อาชีพ หรือ คำคมสั้นๆ ที่บอกความเป็นคุณ</p>
+        </section>
+
+        <section class="profile-details">
+            <h2>ข้อมูลส่วนตัว (Personal Info)</h2>
+            <div class="info-grid">
+                <div class="info-label">วันเกิด:</div>
+                <div>21 มีนาคม 2009</div>
+                
+                <div class="info-label">อายุ:</div>
+                <div>17 ปี</div>
+                
+                <div class="info-label">สัญชาติ:</div>
+                <div>ไทย</div>
+                
+                <div class="info-label">ที่อยู่ปัจจุบัน:</div>
+                <div>กรุงเทพมหานคร, ประเทศไทย</div>
+            </div>
+
+            <h2>ทักษะและความสามารถ (Skills)</h2>
+            <div class="info-grid">
+                <div class="info-label">ทักษะทางคอมพิวเตอร์:</div>
+                <div>HTML, CSS, GitHub, Microsoft Office</div>
+                
+                <div class="info-label">ภาษา:</div>
+                <div>ภาษาไทย (ดีเยี่ยม), ภาษาอังกฤษ (พอใช้)</div>
+                
+                <div class="info-label">งานอดิเรก:</div>
+                <div>อ่านหนังสือ, ถ่ายภาพ, เขียนโปรแกรม</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
