@@ -3,216 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ช่องทางการติดต่อ | แฟ้มสะสมผลงาน</title>
-    <style>
-        /* สไตล์พื้นฐาน */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* แถบเมนูด้านบน */
-        header {
-            background-color: #2c3e50;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #1abc9c;
-        }
-
-        /* ส่วนเนื้อหาหลัก */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        h1.title {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 40px;
-        }
-        h1.title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: #1abc9c;
-            margin: 10px auto 0 auto;
-        }
-
-        /* แบ่งหน้าจอเป็น 2 ฝั่งเมื่อดูบนคอมพิวเตอร์ */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        /* ฝั่งข้อมูลการติดต่อ */
-        .contact-info h3 {
-            color: #2c3e50;
-            font-size: 1.5rem;
-            margin-top: 0;
-        }
-        .contact-method {
-            margin-bottom: 20px;
-        }
-        .contact-method strong {
-            color: #1abc9c;
-            display: block;
-            font-size: 1.1rem;
-        }
-        .contact-method p {
-            margin: 5px 0 0 0;
-            color: #555;
-        }
-
-        /* ฝั่งฟอร์มส่งข้อความ */
-        .contact-form h3 {
-            color: #2c3e50;
-            font-size: 1.5rem;
-            margin-top: 0;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #34495e;
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-family: inherit;
-        }
-        .form-group textarea {
-            resize: vertical;
-        }
-        .btn-submit {
-            background-color: #1abc9c;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            width: 100%;
-            transition: background 0.3s;
-        }
-        .btn-submit:hover {
-            background-color: #16a085;
-        }
-
-        /* ส่วนท้ายเว็บ */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: white;
-            margin-top: 60px;
-        }
-    </style>
+    <title>ติดต่อ | My Sakura Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="sakura-container"></div>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">หน้าหลัก</a></li>
-                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
-                <li><a href="education.html">ประวัติการศึกษา</a></li>
-                <li><a href="award.html">ผลงาน</a></li>
-                <li><a href="contact.html">ช่องทางการติดต่อ</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">Sakura<span>Space</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="about.html">ประวัติส่วนตัว</a></li>
+            <li><a href="education.html">ประวัติการศึกษา</a></li>
+            <li><a href="portfolio.html">ผลงาน</a></li>
+            <li><a href="contact.html" class="active">ติดต่อ</a></li>
+        </ul>
+    </nav>
 
     <main class="container">
-        <h1 class="title">ช่องทางการติดต่อ (Contact Me)</h1>
-
-        <div class="contact-wrapper">
-            
-            <div class="contact-info">
-                <h3>ข้อมูลการติดต่อ</h3>
-                <p>หากคุณสนใจในผลงานหรือต้องการพูดคุยแลกเปลี่ยนเพิ่มเติม สามารถติดต่อฉันได้ตามช่องทางด้านล่างนี้เลยครับ/ค่ะ</p>
-                
-                <div class="contact-method">
-                    <strong>อีเมล (Email)</strong>
-                    <p>your.email@example.com</p>
-                </div>
-
-                <div class="contact-method">
-                    <strong>เบอร์โทรศัพท์ (Phone)</strong>
-                    <p>08X-XXX-XXXX</p>
-                </div>
-
-                <div class="contact-method">
-                    <strong>ลิงก์โซเชียลมีเดีย (Social Media)</strong>
-                    <p>GitHub: github.com/yourusername</p>
-                    <p>LinkedIn: linkedin.com/in/yourname</p>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <h3>ส่งข้อความถึงฉัน</h3>
-                <form action="#" method="POST" onsubmit="alert('ขอบคุณสำหรับข้อความ! (นี่คือระบบจำลองฟอร์ม)'); return false;">
-                    <div class="form-group">
-                        <label for="name">ชื่อของคุณ:</label>
-                        <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อของคุณ" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">อีเมลติดต่อกลับ:</label>
-                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">ข้อความ:</label>
-                        <textarea id="message" name="message" rows="5" placeholder="พิมพ์ข้อความที่ต้องการติดต่อที่นี่..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-submit">ส่งข้อความ</button>
+        <div class="glass-card">
+            <h2 class="section-title">✉️ ช่องทางการติดต่อ (Contact Me)</h2>
+            <div class="contact-layout">
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('ส่งข้อความเรียบร้อยแล้วค่ะ!');">
+                    <input type="text" placeholder="ชื่อของคุณ" required>
+                    <input type="email" placeholder="อีเมลของคุณ" required>
+                    <textarea rows="5" placeholder="เขียนข้อความถึงฉันที่นี่..." required></textarea>
+                    <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
                 </form>
+                <div class="contact-social">
+                    <h3>ติดตามฉันได้ที่</h3>
+                    <a href="https://github.com" target="_blank" class="social-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://facebook.com" target="_blank" class="social-link"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                    <a href="mailto:example@email.com" class="social-link"><i class="fa-solid fa-envelope"></i> Email: cherry@sakura.com</a>
+                </div>
             </div>
-
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 My Portfolio. All Rights Reserved.</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
