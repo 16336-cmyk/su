@@ -1,4 +1,11 @@
 /* ตั้งค่าพื้นฐาน */
+:root {
+    --primary-pink: #FFB7C5;
+    --dark-pink: #FF82A9;
+    --bg-pink: #FFF0F5;
+    --text-dark: #4A4A4A;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +14,9 @@
 }
 
 body {
-    background-color: #FFF0F5; /* สีพื้นหลังชมพูอ่อนมาก */
-    color: #555;
+    background: linear-gradient(135deg, var(--bg-pink) 0%, #ffffff 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -17,107 +25,194 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FFB7C5; /* สีชมพูซากุระ */
-    padding: 15px 50px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 10;
+    padding: 20px 8%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(255, 183, 197, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
 
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+.logo {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.logo span {
+    color: var(--dark-pink);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: var(--text-dark);
     font-size: 16px;
-    transition: 0.3s;
-    padding: 5px 10px;
-    border-radius: 5px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--dark-pink);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    background-color: white;
-    color: #FFB7C5;
+    color: var(--dark-pink);
 }
 
-/* ส่วนเนื้อหาหลัก */
+/* เนื้อหาหลัก (Hero Section) */
 .hero-section {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    padding: 0 20px;
     position: relative;
-    z-index: 5;
+    z-index: 10;
 }
 
-.hero-content h1 {
-    font-size: 48px;
-    color: #FF82A9; /* ชมพูเข้มขึ้นนิดหน่อย */
-    margin-bottom: 10px;
+/* เอฟเฟกต์กระจก (Glassmorphism) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(255, 183, 197, 0.3);
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.hero-content p {
+.profile-img img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(255, 183, 197, 0.5);
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+    color: var(--dark-pink);
+}
+
+.hero-text p {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* ปุ่ม */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
 
 .btn {
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: #FFB7C5;
-    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
     text-decoration: none;
-    border-radius: 25px;
-    font-size: 18px;
-    transition: 0.3s;
-    box-shadow: 0 4px 6px rgba(255, 183, 197, 0.5);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #FF82A9;
-    transform: translateY(-2px);
+.btn-primary {
+    background-color: var(--primary-pink);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 183, 197, 0.6);
 }
 
-/* เอฟเฟกต์ดอกซากุระ */
+.btn-primary:hover {
+    background-color: var(--dark-pink);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--dark-pink);
+    border: 2px solid var(--primary-pink);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-pink);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* รองรับมือถือ (Responsive) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .glass-card {
+        padding: 30px 20px;
+        margin-top: 80px;
+    }
+    .hero-text h1 {
+        font-size: 32px;
+    }
+}
+
+/* เอฟเฟกต์ซากุระ */
 #sakura-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* เพื่อให้คลิกทะลุไปโดนปุ่มด้านล่างได้ */
+    pointer-events: none;
     z-index: 1;
 }
 
 .petal {
     position: absolute;
-    background-color: #FFC0CB;
+    background-color: var(--primary-pink);
     border-radius: 15px 0 15px 0;
-    opacity: 0.8;
+    opacity: 0.7;
     animation: fall linear infinite;
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(-10px) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
+    0% { transform: translateY(-20px) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    50% { transform: translateY(50vh) translateX(20px) rotate(180deg); }
+    100% { transform: translateY(105vh) translateX(-20px) rotate(360deg); opacity: 0; }
 }
