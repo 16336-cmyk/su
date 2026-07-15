@@ -3,45 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ติดต่อ | My Sakura Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio | ติดต่อ</title>
+    <style>
+        /* ส่วนตกแต่งพื้นฐาน */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        
+        nav {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        nav a:hover { color: #1abc9c; }
+        nav a.active { color: #1abc9c; }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        p.intro {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* กล่องช่องทางการติดต่อ */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 1.2em;
+            align-items: center;
+        }
+
+        .contact-item {
+            background-color: #ecf0f1;
+            padding: 15px 30px;
+            border-radius: 8px;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            border-left: 5px solid #1abc9c;
+        }
+
+        .contact-item strong {
+            color: #2c3e50;
+        }
+        
+        .contact-item a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #2c3e50;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <div id="sakura-container"></div>
 
-    <nav class="navbar">
-        <div class="logo">Sakura<span>Space</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html">หน้าหลัก</a></li>
-            <li><a href="about.html">ประวัติส่วนตัว</a></li>
-            <li><a href="education.html">ประวัติการศึกษา</a></li>
-            <li><a href="portfolio.html">ผลงาน</a></li>
-            <li><a href="contact.html" class="active">ติดต่อ</a></li>
-        </ul>
+    <nav>
+        <a href="index.html">หน้าหลัก</a>
+        <a href="profile.html">ประวัติส่วนตัว</a>
+        <a href="education.html">ประวัติการศึกษา</a>
+        <a href="portfolio.html">ผลงาน</a>
+        <a href="contact.html" class="active">ติดต่อ</a>
     </nav>
 
-    <main class="container">
-        <div class="glass-card">
-            <h2 class="section-title">✉️ ช่องทางการติดต่อ (Contact Me)</h2>
-            <div class="contact-layout">
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('ส่งข้อความเรียบร้อยแล้วค่ะ!');">
-                    <input type="text" placeholder="ชื่อของคุณ" required>
-                    <input type="email" placeholder="อีเมลของคุณ" required>
-                    <textarea rows="5" placeholder="เขียนข้อความถึงฉันที่นี่..." required></textarea>
-                    <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
-                </form>
-                <div class="contact-social">
-                    <h3>ติดตามฉันได้ที่</h3>
-                    <a href="https://github.com" target="_blank" class="social-link"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <a href="https://facebook.com" target="_blank" class="social-link"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                    <a href="mailto:example@email.com" class="social-link"><i class="fa-solid fa-envelope"></i> Email: cherry@sakura.com</a>
-                </div>
+    <div class="container">
+        <h1>ช่องทางการติดต่อ (Contact Me)</h1>
+        <p class="intro">หากคุณสนใจในผลงานของฉัน หรือต้องการสอบถามข้อมูลเพิ่มเติม สามารถติดต่อได้ตามช่องทางด้านล่างนี้ครับ/ค่ะ</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>อีเมล (Email):</strong> 
+                <a href="mailto:your.email@example.com">[ใส่ Email ของคุณ]</a>
+            </div>
+            
+            <div class="contact-item">
+                <strong>เบอร์โทรศัพท์ (Phone):</strong> 
+                <span>[ใส่เบอร์โทรศัพท์]</span>
+            </div>
+            
+            <div class="contact-item">
+                <strong>LINE ID:</strong> 
+                <span>[ใส่ LINE ID]</span>
+            </div>
+
+            <div class="contact-item">
+                <strong>Facebook / IG:</strong> 
+                <a href="[ใส่ลิงก์โซเชียลของคุณ]" target="_blank">[ชื่อ Facebook หรือ IG]</a>
             </div>
         </div>
-    </main>
+    </div>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2026 My Portfolio. จัดทำโดย [ใส่ชื่อของคุณ]</p>
+    </footer>
+
 </body>
 </html>
