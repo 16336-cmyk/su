@@ -3,144 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | ผลงาน</title>
+    <title>ผลงานและกิจกรรม | My Portfolio</title>
     <style>
-        /* ส่วนตกแต่งพื้นฐาน */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* สไตล์พื้นฐาน (คุมโทนเหมือนหน้าอื่น ๆ) */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* แถบเมนูนำทาง */
         nav {
             background-color: #2c3e50;
-            padding: 15px 0;
-            text-align: center;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
-            font-weight: bold;
-        }
-        nav a:hover { color: #1abc9c; }
-        nav a.active { color: #1abc9c; }
 
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #3498db;
+        }
+
+        /* ส่วนเนื้อหาหลัก */
         .container {
             max-width: 1000px;
-            margin: 50px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        h1 {
-            color: #2c3e50;
+        .page-title {
             text-align: center;
-            border-bottom: 2px solid #1abc9c;
-            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        /* ระบบกริดของการ์ดผลงาน */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-bottom: 40px;
         }
 
-        /* ตารางจัดเรียงผลงาน (Grid) */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .portfolio-item {
-            background: #fff;
-            border: 1px solid #e0e0e0;
+        /* ตัวการ์ดผลงาน */
+        .award-card {
+            background: white;
             border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .portfolio-item:hover {
+        /* ลูกเล่นเมื่อชี้เมาส์ที่การ์ด */
+        .award-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
         }
 
-        .portfolio-item img {
+        /* ส่วนรูปภาพในการ์ด */
+        .award-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-bottom: 3px solid #3498db;
         }
 
-        .portfolio-info {
+        /* ส่วนเนื้อหาในการ์ด */
+        .award-info {
             padding: 20px;
-            text-align: center;
         }
 
-        .portfolio-info h3 {
-            margin: 0 0 10px 0;
+        .award-tag {
+            display: inline-block;
+            background-color: #e8f4fd;
+            color: #3498db;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .award-info h3 {
+            font-size: 1.2rem;
             color: #2c3e50;
+            margin-bottom: 8px;
         }
 
-        .portfolio-info p {
-            margin: 0;
-            color: #666;
-            font-size: 0.95em;
+        .award-info p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
         }
 
+        /* ส่วนท้ายของหน้า (Footer) */
         footer {
             text-align: center;
             padding: 20px;
-            margin-top: 40px;
             background-color: #2c3e50;
             color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        /* ปรับแต่งสำหรับมือถือ */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            body {
+                padding-bottom: 80px;
+            }
+            footer {
+                position: relative;
+                margin-top: 40px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- แถบเมนู (คลาส active ย้ายมาที่ ผลงาน) -->
     <nav>
-        <a href="index.html">หน้าหลัก</a>
-        <a href="profile.html">ประวัติส่วนตัว</a>
-        <a href="education.html">ประวัติการศึกษา</a>
-        <a href="portfolio.html" class="active">ผลงาน</a>
-        <a href="contact.html">ติดต่อ</a>
+        <ul>
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+            <li><a href="education.html">ประวัติการศึกษา</a></li>
+            <li><a href="award.html" class="active">ผลงาน</a></li>
+            <li><a href="contact.html">ช่องทางการติดต่อ</a></li>
+        </ul>
     </nav>
 
-    <div class="container">
-        <h1>ผลงานที่ผ่านมา (My Portfolio)</h1>
-        
-        <div class="portfolio-grid">
-            
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300" alt="รูปผลงาน 1">
-                <div class="portfolio-info">
-                    <h3>[ชื่อผลงาน / โครงงานที่ 1]</h3>
-                    <p>[คำอธิบายสั้นๆ เกี่ยวกับผลงานชิ้นนี้ เช่น หน้าที่ที่รับผิดชอบ หรือรางวัลที่ได้รับ]</p>
+    <main class="container">
+        <h1 class="page-title">ผลงานและกิจกรรม (Awards & Activities)</h1>
+
+        <!-- เริ่มกลุ่มการ์ดผลงาน -->
+        <div class="gallery-grid">
+
+            <!-- การ์ดผลงานชิ้นที่ 1 -->
+            <div class="award-card">
+                <!-- ใส่รูปภาพผลงาน/เกียรติบัตรตรงนี้ -->
+                <img src="https://via.placeholder.com/400x250" alt="รูปผลงาน 1" class="award-img">
+                <div class="award-info">
+                    <span class="award-tag">รางวัล / การประกวด</span>
+                    <h3>รางวัลชนะเลิศ การประกวด...</h3>
+                    <p>รายละเอียดการประกวดหรือกิจกรรมที่ทำ บทบาทหน้าที่ของเราในงานนั้น ๆ และความสำเร็จที่ได้รับในระดับโรงเรียน/จังหวัด</p>
                 </div>
             </div>
 
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300" alt="รูปผลงาน 2">
-                <div class="portfolio-info">
-                    <h3>[ชื่อผลงาน / กิจกรรมที่ 2]</h3>
-                    <p>[คำอธิบายสั้นๆ เกี่ยวกับผลงานชิ้นนี้ เช่น ประสบการณ์ที่ได้รับจากการเข้าร่วม]</p>
+            <!-- การ์ดผลงานชิ้นที่ 2 -->
+            <div class="award-card">
+                <img src="https://via.placeholder.com/400x250" alt="รูปผลงาน 2" class="award-img">
+                <div class="award-info">
+                    <span class="award-tag">กิจกรรม / ค่าย</span>
+                    <h3>เข้าร่วมค่ายวิชาการ...</h3>
+                    <p>รายละเอียดการเข้าร่วมค่ายฝึกอบรม หรือค่ายเยาวชนของมหาวิทยาลัยต่าง ๆ สิ่งที่ได้เรียนรู้และทักษะที่ได้รับจากค่ายนี้</p>
                 </div>
             </div>
 
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300" alt="รูปผลงาน 3">
-                <div class="portfolio-info">
-                    <h3>[ชื่อผลงาน / เกียรติบัตรที่ 3]</h3>
-                    <p>[คำอธิบายสั้นๆ เกี่ยวกับผลงานชิ้นนี้]</p>
+            <!-- การ์ดผลงานชิ้นที่ 3 -->
+            <div class="award-card">
+                <img src="https://via.placeholder.com/400x250" alt="รูปผลงาน 3" class="award-img">
+                <div class="award-info">
+                    <span class="award-tag">ผลงาน / โครงงาน</span>
+                    <h3>โครงงานวิทยาศาสตร์ / คอมพิวเตอร์ เรื่อง...</h3>
+                    <p>รายละเอียดเกี่ยวกับโครงงานที่เคยทำในชั้นเรียน จุดประสงค์ของโครงงาน และเครื่องมือหรือภาษาที่ใช้ในการพัฒนา</p>
                 </div>
             </div>
 
         </div>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 My Portfolio. จัดทำโดย [ใส่ชื่อของคุณ]</p>
+        <p>&copy; 2026 นาย/นางสาว (ใส่ชื่อของคุณ) - ม.6 Portfolio. All Rights Reserved.</p>
     </footer>
 
 </body>
