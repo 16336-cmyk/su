@@ -5,157 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ประวัติการศึกษา | My Portfolio</title>
     <style>
-        /* สไตล์พื้นฐาน (เหมือนหน้าแรก) */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-color: #ffb7c5;      
+            --primary-dark: #e08b9b;       
+            --primary-light: #fff0f2;      
+            --bg-color: #fff9fa;           
+            --dark-text: #4a373a;          
+            --nav-bg: #ffe4e8;             
         }
 
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-            padding-bottom: 60px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--dark-text); line-height: 1.6; padding-bottom: 60px; }
 
-        /* แถบเมนูนำทาง */
-        nav {
-            background-color: #2c3e50;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        nav { background-color: var(--nav-bg); padding: 1rem; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--primary-color); }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
+        nav a { text-decoration: none; color: var(--dark-text); font-weight: bold; transition: all 0.3s; padding: 5px 10px; border-radius: 4px; }
+        nav a:hover, nav a.active { color: white; background-color: var(--primary-dark); }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .page-title { text-align: center; margin-bottom: 40px; color: var(--primary-dark); }
 
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            color: #3498db;
-        }
-
-        /* ส่วนเนื้อหาหลัก */
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .page-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-
-        /* สไตล์เส้นไทม์ไลน์ (Timeline) */
-        .timeline {
-            position: relative;
-            border-left: 3px solid #3498db;
-            margin: 0 auto;
-            padding-left: 30px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        /* จุดวงกลมบนเส้นไทม์ไลน์ */
+        /* สไตล์เส้นไทม์ไลน์ ธีมซากุระ */
+        .timeline { position: relative; border-left: 3px solid var(--primary-dark); margin: 0 auto; padding-left: 30px; }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        
         .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: #3498db;
-            left: -40px;
-            top: 5px;
-            border: 3px solid #fff;
-            box-shadow: 0 0 0 3px #3498db;
+            content: ''; position: absolute; width: 16px; height: 16px; border-radius: 50%;
+            background-color: var(--primary-dark); left: -40px; top: 5px;
+            border: 3px solid white; box-shadow: 0 0 0 3px var(--primary-color);
         }
 
-        /* การ์ดข้อมูลการศึกษา */
         .timeline-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: relative;
+            background: white; padding: 20px; border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(255, 183, 197, 0.2); position: relative;
         }
 
         .timeline-year {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 4px 10px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 10px;
+            display: inline-block; background-color: var(--primary-dark); color: white;
+            padding: 4px 10px; font-size: 0.85rem; font-weight: bold; border-radius: 4px; margin-bottom: 10px;
         }
 
-        .timeline-content h3 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
+        .timeline-content h3 { color: var(--dark-text); margin-bottom: 5px; }
+        .timeline-content h4 { color: #a07d83; font-weight: 500; margin-bottom: 10px; }
+        .gpa { font-weight: bold; color: #c97282; margin-top: 5px; }
 
-        .timeline-content h4 {
-            color: #7f8c8d;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
+        footer { text-align: center; padding: 20px; background-color: var(--nav-bg); color: var(--dark-text); border-top: 1px solid var(--primary-color); position: fixed; bottom: 0; width: 100%; font-size: 0.9rem; z-index: 10; }
 
-        .gpa {
-            font-weight: bold;
-            color: #27ae60;
-            margin-top: 5px;
-        }
-
-        /* ส่วนท้ายของหน้า (Footer) */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 0.9rem;
-        }
-
-        /* การปรับแต่งสำหรับมือถือ */
         @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            body {
-                padding-bottom: 80px;
-            }
-            footer {
-                position: relative;
-                margin-top: 40px;
-            }
+            nav ul { flex-direction: column; align-items: center; gap: 10px; }
+            body { padding-bottom: 80px; }
+            footer { position: relative; margin-top: 40px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- แถบเมนู (สังเกตว่าคลาส active จะย้ายมาอยู่ที่ ประวัติการศึกษา) -->
     <nav>
         <ul>
             <li><a href="index.html">หน้าหลัก</a></li>
@@ -168,22 +72,16 @@
 
     <main class="container">
         <h1 class="page-title">ประวัติการศึกษา (Education)</h1>
-
-        <!-- เริ่มส่วนไทม์ไลน์ -->
         <div class="timeline">
-
-            <!-- ระดับมัธยมศึกษาตอนปลาย -->
             <div class="timeline-item">
                 <div class="timeline-content">
                     <span class="timeline-year">พ.ศ. 2567 - ปัจจุบัน</span>
                     <h3>ชั้นมัธยมศึกษาตอนปลาย (ม.4 - ม.6)</h3>
-                    <h4>โรงเรียน (ใส่ชื่อโรงเรียนปัจจุบันของคุณ)</h4>
-                    <p>แผนการเรียน: วิทยาศาสตร์ - คณิตศาสตร์ (หรือแผนของคุณ)</p>
-                    <p class="gpa">เกรดเฉลี่ยสะสม (GPAX): 3.XX (หรือลบออกหากไม่ต้องการใส่)</p>
+                    <h4>โรงเรียน (ใส่ชื่อโรงเรียน)</h4>
+                    <p>แผนการเรียน: วิทยาศาสตร์ - คณิตศาสตร์</p>
+                    <p class="gpa">เกรดเฉลี่ยสะสม (GPAX): 3.XX</p>
                 </div>
             </div>
-
-            <!-- ระดับมัธยมศึกษาตอนต้น -->
             <div class="timeline-item">
                 <div class="timeline-content">
                     <span class="timeline-year">พ.ศ. 2564 - 2566</span>
@@ -192,8 +90,6 @@
                     <p>เกรดเฉลี่ยสะสม (GPAX): 3.XX</p>
                 </div>
             </div>
-
-            <!-- ระดับประถมศึกษา -->
             <div class="timeline-item">
                 <div class="timeline-content">
                     <span class="timeline-year">พ.ศ. 2558 - 2563</span>
@@ -201,7 +97,6 @@
                     <h4>โรงเรียน (ใส่ชื่อโรงเรียนระดับประถม)</h4>
                 </div>
             </div>
-
         </div>
     </main>
 
@@ -209,5 +104,6 @@
         <p>&copy; 2026 นาย/นางสาว (ใส่ชื่อของคุณ) - ม.6 Portfolio. All Rights Reserved.</p>
     </footer>
 
+    <script src="sakura-fall.js"></script>
 </body>
 </html>
