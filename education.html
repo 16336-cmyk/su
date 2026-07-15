@@ -3,105 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | ประวัติการศึกษา</title>
-    <style>
-        /* ส่วนของการตกแต่งเว็บไซต์ (CSS) พื้นฐาน */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
+    <title>ประวัติการศึกษา</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="education-section">
+        <h2 class="section-title">ประวัติการศึกษา</h2>
         
-        /* เมนูนำทาง (Navigation Bar) */
-        nav {
-            background-color: #2c3e50;
-            padding: 15px 0;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #1abc9c;
-        }
-        nav a.active {
-            color: #1abc9c; /* ไฮไลท์เมนูหน้าปัจจุบัน */
-        }
+        <div class="education-container">
+            
+            <div class="edu-card">
+                <div class="edu-year">พ.ศ. 2563 - 2567</div>
+                <div class="edu-details">
+                    <h3 class="degree">ปริญญาตรี วิทยาศาสตรบัณฑิต (วิทยาการคอมพิวเตอร์)</h3>
+                    <p class="school-name">มหาวิทยาลัยเทคโนโลยีตัวอย่าง</p>
+                    <p class="gpa">เกรดเฉลี่ยสะสม: <strong>3.85</strong></p>
+                </div>
+            </div>
 
-        /* ส่วนเนื้อหาหลัก */
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+            <div class="edu-card">
+                <div class="edu-year">พ.ศ. 2560 - 2563</div>
+                <div class="edu-details">
+                    <h3 class="degree">มัธยมศึกษาตอนปลาย (สายวิทย์-คณิต)</h3>
+                    <p class="school-name">โรงเรียนมัธยมตัวอย่างวิทยา</p>
+                    <p class="gpa">เกรดเฉลี่ยสะสม: <strong>3.90</strong></p>
+                </div>
+            </div>
 
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 2px solid #1abc9c;
-            padding-bottom: 10px;
-            margin-bottom: 40px;
-        }
+        </div>
+    </section>
 
-        /* การตกแต่งส่วนประวัติการศึกษา (Education Cards) */
-        .edu-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .edu-card {
-            background-color: #f8f9fa;
-            border-left: 6px solid #1abc9c; /* เส้นสีเขียวด้านซ้าย */
-            padding: 20px 25px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
-
-        .edu-card:hover {
-            transform: translateX(10px); /* เอฟเฟกต์เลื่อนไปทางขวาเล็กน้อยเมื่อเอาเมาส์ชี้ */
-        }
-
-        .edu-year {
-            color: #1abc9c;
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 8px;
-        }
-
-        .edu-school {
-            font-size: 1.4em;
-            color: #2c3e50;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-        }
-
-        .edu-details {
-            margin: 0;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .edu-gpa {
-            display: inline-block;
-            background-color: #2c3e50;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-
-        /* ส่วน
+</body>
+</html>
 </body>
 </html>
