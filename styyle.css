@@ -1,0 +1,123 @@
+/* ตั้งค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background-color: #FFF0F5; /* สีพื้นหลังชมพูอ่อนมาก */
+    color: #555;
+    overflow-x: hidden;
+}
+
+/* แถบเมนูนำทาง */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFB7C5; /* สีชมพูซากุระ */
+    padding: 15px 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: white;
+    color: #FFB7C5;
+}
+
+/* ส่วนเนื้อหาหลัก */
+.hero-section {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #FF82A9; /* ชมพูเข้มขึ้นนิดหน่อย */
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #FFB7C5;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(255, 183, 197, 0.5);
+}
+
+.btn:hover {
+    background-color: #FF82A9;
+    transform: translateY(-2px);
+}
+
+/* เอฟเฟกต์ดอกซากุระ */
+#sakura-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* เพื่อให้คลิกทะลุไปโดนปุ่มด้านล่างได้ */
+    z-index: 1;
+}
+
+.petal {
+    position: absolute;
+    background-color: #FFC0CB;
+    border-radius: 15px 0 15px 0;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
