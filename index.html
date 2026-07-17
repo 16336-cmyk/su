@@ -202,31 +202,6 @@
 
     <!-- ดึงสคริปต์เอฟเฟกต์กลีบซากุระร่วง (ให้สร้างไฟล์ sakura-fall.js ไว้ในโฟลเดอร์เดียวกันด้วยนะครับ) -->
     
-    <script>
-     .sakura-cartoon-tree {
-    position: fixed;
-    right: -40px; /* ให้โผล่แค่ครึ่งเดียว */
-    bottom: 0;
-    width: 250px;
-    height: 350px;
-    z-index: 1;
-    pointer-events: none;
-    /* เอฟเฟกต์โยกไปมา */
-    animation: cartoon-sway 4s ease-in-out infinite;
-    transform-origin: bottom center;
-}
-
-@keyframes cartoon-sway {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(5deg) scale(1.02); }
-}
-
-/* ซ่อนในมือถือ */
-@media (max-width: 768px) {
-    .sakura-cartoon-tree { display: none; }
-}
-
-    </script>
 </body>
 </html>
 </body>
