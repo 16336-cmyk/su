@@ -135,43 +135,57 @@
             z-index: 10;
         }
 
-    <style>
-.sakura-cartoon-tree {
-    position: fixed;
-    right: -40px; /* ให้โผล่แค่ครึ่งเดียว */
-    bottom: 0;
-    width: 250px;
-    height: 350px;
-    z-index: 1;
-    pointer-events: none;
-    /* เอฟเฟกต์โยกไปมา */
-    animation: cartoon-sway 4s ease-in-out infinite;
-    transform-origin: bottom center;
-}
+        /* CSS สำหรับต้นไม้ซากุระครึ่งขวาประดับหน้าเว็บ */
+        .sakura-tree-right {
+            position: fixed;
+            right: 0;
+            top: 15%;
+            width: 150px;
+            height: 400px;
+            background: radial-gradient(circle at 100% 50%, var(--primary-color) 20%, var(--primary-dark) 50%, transparent 70%);
+            border-radius: 100px 0 0 100px;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 1;
+            box-shadow: -20px 0 40px rgba(255, 183, 197, 0.3);
+        }
 
-@keyframes cartoon-sway {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(5deg) scale(1.02); }
-}
+        .sakura-tree-right::before {
+            content: '';
+            position: absolute;
+            top: 25%;
+            right: 0;
+            width: 70px;
+            height: 8px;
+            background-color: var(--dark-text);
+            transform: rotate(-15deg);
+            border-radius: 4px;
+        }
 
-/* ซ่อนในมือถือ */
-@media (max-width: 768px) {
-    .sakura-cartoon-tree { display: none; }
-}
-
-}
-
+        /* ปรับแต่งสำหรับหน้าจอมือถือ */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            body {
+                padding-bottom: 80px;
+            }
+            footer {
+                position: relative;
+                margin-top: 40px;
+            }
+            .sakura-tree-right {
+                display: none; /* ซ่อนต้นไม้บนมือถือป้องกันการบังเนื้อหา */
+            }
+        }
     </style>
 </head>
-<body class="sakura-container">
-<div class="sakura-cartoon-tree">
-    <svg viewBox="0 0 200 300" width="100%" height="100%">
-        <path d="M100 300 Q100 200 80 150 T120 100" fill="none" stroke="#5D4037" stroke-width="15" stroke-linecap="round"/>
-        <circle cx="80" cy="100" r="60" fill="#FFB7C5" />
-        <circle cx="130" cy="90" r="50" fill="#FFC1CC" />
-        <circle cx="100" cy="60" r="70" fill="#FFB7C5" />
-    </svg>
-</div>
+<body>
+
+    <!-- ต้นไม้ซากุระประดับฝั่งขวา -->
+    <div class="sakura-tree-right"></div>
 
     <nav>
         <ul>
@@ -201,8 +215,6 @@
     </footer>
 
     <!-- ดึงสคริปต์เอฟเฟกต์กลีบซากุระร่วง (ให้สร้างไฟล์ sakura-fall.js ไว้ในโฟลเดอร์เดียวกันด้วยนะครับ) -->
-    
-</body>
-</html>
+    <script src="sakura-fall.js"></script>
 </body>
 </html>
